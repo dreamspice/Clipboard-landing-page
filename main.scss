@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,600;1,400&display=swap');
+
+$strong-cyan: hsl(171, 66%, 44%);
+$light-blue: hsl(233, 100%, 69%);
+$dark-grayish-blue: hsl(210, 10%, 33%);
+$grayish-blue: hsl(201, 11%, 66%);
+
+@mixin flexCenterColumn() {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+}
+
+@mixin center() {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Bai Jamjuree', sans-serif;
+    display: flex;
+    flex-direction: column;
+    h1, h2 {
+        color:$dark-grayish-blue;
+    }
+    p {
+        color: $grayish-blue;
+    }
+    button {
+        border-radius: 50px;
+        border: none;
+        color: white;
+        padding: 10px 70px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    .download-for-ios {
+        background: $strong-cyan;
+    }
+    .download-for-mac {
+        background: $light-blue;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+header {
+    background: url('/images/bg-header-mobile.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    .first-header-element {
+        @include flexCenterColumn();
+        padding: 80px 20px 50px 20px;
+        gap: 30px;
+        p {
+            min-width: 350px;
+        }
+    }
+    .second-header-element {
+        @include flexCenterColumn();
+        padding: 80px 20px 50px 20px;
+        gap: 10px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.monitor-section {
+    @include flexCenterColumn();
+    @include center();
+    max-width: 80%;
+    margin-top: 20px;
+    margin-bottom: 180px;
+    gap: 50px;
+    .monitor-section-features {
+        @include flexCenterColumn();
+        gap: 40px;
+    }
+    p {
+        margin-top: 10px;
+    }
+}
+
+.clipboard-section {
+    @include flexCenterColumn();
+    @include center();
+    max-width: 80%;
+    gap: 60px;
+    margin-bottom: 90px;
+    p {
+        margin-top: 10px;
+    }
+}
+
+.features-section {
+    @include flexCenterColumn();
+    @include center();
+    max-width: 80%;
+    margin-bottom: 100px;
+    gap: 60px;
+    img {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+    p {
+        margin-top: 20px;
+    }
+}
+
+.logo-section {
+    @include flexCenterColumn();
+    @include center();
+    gap: 60px;
+    max-width: 30%;
+    margin-bottom: 140px;
+}
+
+.download-section {
+    @include flexCenterColumn();
+    @include center();
+    max-width: 80%;
+    gap: 30px;
+    margin-bottom: 180px;
+    h2 {
+        max-width: 80%;
+    }
+}
+
+footer {
+    @include flexCenterColumn();
+    margin-top: auto;
+    gap: 60px;
+    .footer-pages {
+        @include flexCenterColumn();
+        gap: 20px;
+        img {
+            transform: scale(0.5);
+        }
+        p {
+            color: $dark-grayish-blue;
+        }
+    }
+    .footer-media {
+        display: flex;
+        width: 65%;
+        justify-content: space-evenly;
+    }
+}
+
+                @media screen and (min-width: 1000px) {
+body {
+    font-size: 18px;
+        button {
+            padding: 10px 40px;
+            font-weight: 600;
+            letter-spacing: 0px;
+        }
+}
+    header {
+        background: url('/images/bg-header-desktop.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        .second-header-element {
+            p {
+                margin-top: 5px;
+            }
+        }
+        .buttons {
+            flex-direction: row;
+            margin-top: 10px;
+        }
+        p {
+            max-width: 630px;
+        }
+    }
+    .monitor-section {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+        gap: 100px;
+        .monitor-section-features {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: start;
+            p {
+                max-width: 65%;
+            }
+        }
+        img {
+            margin-left: -30px;
+        }
+}
+    .clipboard-section {
+        p {
+            margin-top: 20px;
+        }
+    }
+    .features-section {
+        flex-direction: row;
+        align-items: center;
+        p {
+            max-width: 350px;
+        }
+    }
+    .logo-section {
+        display: flex;
+        flex-direction: row;
+        gap: 120px;
+        margin-top: 160px;
+    }
+    .download-section {
+        .buttons {
+            flex-direction: row;
+        }
+        p {
+            max-width: 700px;
+            margin-bottom: 10px;
+        }
+    }
+    footer {
+        flex-direction: row;
+            .footer-media {
+                flex: 1;
+                justify-content: center;
+                gap: 30px;
+            }
+            .footer-pages {
+                flex-direction: row;
+                justify-content: center;
+                flex: 2;
+                gap: 30px;
+            }
+    }
+}
